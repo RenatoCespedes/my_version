@@ -155,8 +155,8 @@ def run(weights='yolov5s.pt',  # model.pt path(s)
                 acumulado=0
                 vec_x=[]
                 vec_y=[]
-                print("det")
-                print(len(det))
+                # print("det")
+                # print(len(det))
 
                 # for *xyxy, conf, cls in reversed(det):
                 #     xywh=(xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()
