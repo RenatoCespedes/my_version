@@ -155,16 +155,27 @@ def run(weights='yolov5s.pt',  # model.pt path(s)
                     n = (det[:, -1] == c).sum()  # detections per class
                     s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
                 acumulado=0
-                vec_x=[]
-                vec_y=[]
+                vector=[]
+                # vec_y=[]
                 # print("det")
                 # print(len(det))
-
+                
+                    
                 for *xyxy, conf, cls in reversed(det):
                     xywh=(xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()
                     x_prev=xywh[0]
                     y_prev=xywh[1]
-                    print(x_prev,y_prev)
+                    vector.append(x_prev,y_prev)
+                
+                for i in range(len(vector)):
+                    print("i")
+                    print(i)
+                    for j in range(i+1,len(vector)):
+                        print("J")
+                        print(j)
+
+                    # print(x_prev,y_prev)
+                    
                 #     vec_y.
 
 
